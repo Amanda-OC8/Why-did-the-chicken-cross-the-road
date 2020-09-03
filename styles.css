@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.7em;
+}
+
+.game-instructions {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  margin-left: 50px;
+ 
+}
+
+
+
+.title-img {
+  height: 200px;
+  width: auto;
+  padding-right: 30px;
+  
+}
+
+.game-instructions p {
+  font-size: 1.1em;
+  font-family: "Verdana";
+  padding-bottom: 5px;
+}
+
+.controls {
+  width: 450px;
+}
+
+.keys {
+  height: 75px;
+  width: auto;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.game-start>h2 {
+  margin-bottom: 20px;
+
+}
+
+#game-board {
+  float: top;
+  padding: 20px 0px;
+}
+
+/* Buttons */
+.start-button {
+  height: 75px;
+  width: 200px;
+  font-size: 2.5em;
+  background-color: #870007;
+  color: rgb(255, 177, 125);
+  padding: 10px 30px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+ .player1, .player2 {
+  width: 50px;
+  margin: 10px 20px; 
+  justify-content: center;
+}
+
+.unselected {
+  filter: brightness(1.5);
+  filter: grayscale(1);
+}
