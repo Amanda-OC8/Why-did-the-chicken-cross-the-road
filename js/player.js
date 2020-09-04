@@ -73,4 +73,4 @@ class Player {
             audio.play()
         }
     }
-}
+} 
