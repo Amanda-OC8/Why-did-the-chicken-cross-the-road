@@ -32,12 +32,8 @@ class Obstacle {
         }
     }
     
-    move(positionY) {
-        // Move the obstacle. The obstacle only has a right to left move. Each obstacle have a different speed in each highway lane
-        this.obsPos.y === positionY.middlePoint[3] -35 ? this.obsPos.x -= 20 : null
-        this.obsPos.y === positionY.middlePoint[2] - 35 ? this.obsPos.x -= 25 : null
-        this.obsPos.y === positionY.middlePoint[1] - 35 ? this.obsPos.x -= 30 : null
-        this.obsPos.y === positionY.middlePoint[0] - 35 ? this.obsPos.x -= 35 : null
-       
+   move(positionY) {
+        // Move the obstacle. The obstacle only has a right to left move. The speed of the obstacle change in every highway lane: upper, faster
+        positionY.middlePoint.forEach((elm, index) => { this.obsPos.y === elm - this.obsSize.h / 2 ? this.obsPos.x -= 45 - index * 5 : null});   
     }
 }
