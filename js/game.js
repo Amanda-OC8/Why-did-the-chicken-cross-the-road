@@ -63,8 +63,8 @@ const Game = {
         !this.p1.classList.contains("unselected") && !this.p2.classList.contains("unselected") ? this.player = [this.player1, this.player2] : !this.p2.classList.contains("unselected") ? this.player = this.player2 : this.player = this.player1
         // With two players, the initial position in the X axis is changed
         if (this.player.length == 2) {
-            this.player[0].playerPos.x = this.canvasSize.w / 4
-            this.player[1].playerPos.x = this.canvasSize.w * 3 / 4
+            this.player[0].playerPos.x = this.canvasSize.w * 3 / 4
+            this.player[1].playerPos.x = this.canvasSize.w / 4
         }
         // Start the music
         this.bckSound.play()
@@ -96,7 +96,7 @@ const Game = {
             } 
 
             //Move along the X axis the obstacles
-            this.framesCounter % 10 == 0 ? this.obstacles.forEach(elm => elm.move()) : null
+            this.framesCounter % 10 == 0 ? this.obstacles.forEach(elm => elm.move(this.highwayLanePosition)) : null
             
             // Check if the player(s) collide(s) with an obstacle
             this.player.length == 2 ? this.obstacles.forEach(elm => this.isCollision2P(elm)) : this.obstacles.forEach(elm => this.isCollision(elm))
@@ -137,7 +137,7 @@ const Game = {
         //Draw all the elements of the game: the background, the player and the obstacles
         this.background.draw()
         this.player.draw(this.framesCounter)
-        this.obstacles.forEach(elm => elm.draw())
+        this.obstacles.forEach(elm => elm.draw(this.framesCounter))
     },
 
     drawAll2P() {
@@ -145,7 +145,7 @@ const Game = {
         this.background.draw()
         this.player[0].draw(this.framesCounter)
         this.player[1].draw(this.framesCounter)
-        this.obstacles.forEach(elm => elm.draw())
+        this.obstacles.forEach(elm => elm.draw(this.framesCounter))
     },
 
     drawRoad() {
@@ -264,7 +264,7 @@ const Game = {
     countDown(seconds) {
         //The count down before start
         this.background.draw()
-        this.obstacles.forEach(elm => elm.draw())
+        this.obstacles.forEach(elm => elm.draw(this.framesCounter))
         this.ctx.font = "60px Verdana"
         this.ctx.fillStyle = "white"
         this.ctx.fillText(`Start in: ${seconds}`, this.canvasSize.w /4, this.canvasSize.h / 2)
