@@ -4,3 +4,5 @@ Use the arrow keys or the WASD keys to move the chicken or the chick to other si
 Avoid the cars to get safe!
 You can choose to play with the chicken or the chick. Or with both.
 Discovers all the reasons to have the chicken to cross the road
+
+<a href="https://amanda-oc8.github.io/Why-did-the-chicken-cross-the-road-/"> Play!</a>
