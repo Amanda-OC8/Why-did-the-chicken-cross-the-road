@@ -136,5 +136,3 @@ class Background {
         this.ctx.fillText(`Lives: ${this.lives}`, 10, 40)
     }
 }
-
-
