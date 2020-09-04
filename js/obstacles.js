@@ -7,20 +7,37 @@ class Obstacle {
             y: posY
         }
         this.obsSize = {
-            w: 121,
+            w: 127,
             h: 70
         }
         //Create the image for the obstacle.
         this.img = new Image()
-        this.img.src = "./images/car-2.png"
+        this.img.src = "./images/car-animate.png"
+        this.img.frames = 10
+        this.img.framesIndex = 0
     }
-    draw() {
-        // Draw the obstacle from the image
-        this.ctx.drawImage(this.img, this.obsPos.x, this.obsPos.y, this.obsSize.w, this.obsSize.h)
+    draw(framesCounter) {
+           
+        this.ctx.drawImage(this.img, this.img.framesIndex * Math.floor(this.img.width / this.img.frames), 0, Math.floor(this.img.width / this.img.frames), this.img.height, this.obsPos.x, this.obsPos.y, this.obsSize.w, this.obsSize.h)
+        this.animate(framesCounter)
     }
 
-    move() {
-        // Move the obstacle. The obstacle only has a right to left move.
-        this.obsPos.x -=25
+    animate(framesCounter) {
+        // The animation. Move along the sprite width
+        if (framesCounter % 10 == 0) {
+            this.img.framesIndex++;
+        }
+        if (this.img.framesIndex > this.img.frames - 1) {
+            this.img.framesIndex = 0;
+        }
+    }
+    
+    move(positionY) {
+        // Move the obstacle. The obstacle only has a right to left move. Each obstacle have a different speed in each highway lane
+        this.obsPos.y === positionY.middlePoint[3] -35 ? this.obsPos.x -= 20 : null
+        this.obsPos.y === positionY.middlePoint[2] - 35 ? this.obsPos.x -= 25 : null
+        this.obsPos.y === positionY.middlePoint[1] - 35 ? this.obsPos.x -= 30 : null
+        this.obsPos.y === positionY.middlePoint[0] - 35 ? this.obsPos.x -= 35 : null
+       
     }
 }
