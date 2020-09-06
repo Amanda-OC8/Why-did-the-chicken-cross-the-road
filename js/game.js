@@ -84,7 +84,7 @@ const Game = {
             }
             
             // Add two new obstacles in two differents and random highway lanes
-            if (this.framesCounter % 100 == 0) {
+            if (this.framesCounter % 80 == 0) {
                 this.randomHighwayLane = [Math.floor(Math.random() * (this.highwayLaneNumber)), this.randomHighwayLane = Math.floor(Math.random() * (this.highwayLaneNumber))]
                 // The while avoid the appeance of the two obstacles in the same highway lane
                 while(this.randomHighwayLane[0] === this.randomHighwayLane[1]) {
