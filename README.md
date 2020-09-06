@@ -1,4 +1,4 @@
-# Why-did-the-chicken-cross-the-road-
+# Why did the chicken cross the road?
 A frogger-like game with a curious chicken. 
 Use the arrow keys or the WASD keys to move the chicken or the chick to other side of the road. 
 Avoid the cars to get safe!
