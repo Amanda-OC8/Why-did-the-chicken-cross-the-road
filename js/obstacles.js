@@ -34,6 +34,6 @@ class Obstacle {
     
    move(positionY) {
         // Move the obstacle. The obstacle only has a right to left move. The speed of the obstacle change in every highway lane: upper, faster
-        positionY.middlePoint.forEach((elm, index) => { this.obsPos.y === elm - this.obsSize.h / 2 ? this.obsPos.x -= 45 - index * 5 : null});   
+        positionY.middlePoint.forEach((elm, index) => { this.obsPos.y === elm - this.obsSize.h / 2 ? this.obsPos.x -= 55 - index * 5 : null});   
     }
 }
